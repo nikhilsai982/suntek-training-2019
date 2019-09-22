@@ -1,0 +1,31 @@
+
+def missing(x):
+    m = max(x) 
+    if m < 1: 
+          
+         
+        return 1 
+    if len(x) == 1: 
+          
+         
+        return 2 if x[0] == 1 else 1     
+    l = [0] * m 
+    for i in range(len(x)): 
+        if x[i] > 0: 
+            if l[x[i] - 1] != 1: 
+                  
+                 
+                l[x[i] - 1] = 1 
+    for i in range(len(l)): 
+        
+        if l[i] == 0:  
+            return i + 1
+    
+    return i + 2     
+x=[]  
+n=int(input('enter the number of elements'))
+for i in range(0,n):
+    a=int(input())
+    x.append(a)
+
+print(missing(x))
