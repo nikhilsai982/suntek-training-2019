@@ -1,0 +1,27 @@
+
+r=int(input('enter the no of rows'))
+c=int(input('enter the no of coloumns'))
+  
+
+def diagonalelements(matrix) : 
+      
+    
+    for l in range(1, (r + c)) : 
+          
+        c1= max(0, l - r) 
+  
+        
+        count = min(l,(c-c1),r) 
+  
+         
+        for j in range(0, count) : 
+            print(matrix[min(r,l)-j-1][c1+j], end = "\t")
+  
+        print() 
+matrix=[]
+for i in range(r):           
+    a =[] 
+    for j in range(c):       
+         a.append(int(input())) 
+    matrix.append(a)
+diagonalelements(a) 
