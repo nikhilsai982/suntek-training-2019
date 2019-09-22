@@ -1,0 +1,25 @@
+x=int(input('enter x value'))
+y=int(input('enter y value'))
+z=int(input('enter z value'))
+def expoMod(x, y, z): 
+      
+    
+    if (x == 0): 
+        return 0
+    if (y == 0): 
+        return 1
+      
+     
+    a = 0
+    if (y % 2 == 0): 
+        a = expoMod(x, y / 2, z) 
+        a = (a * a) % z 
+      
+    # If B is Odd 
+    else: 
+        a = x % z 
+        a = (a * expoMod(x, y - 1,  
+                             z) % z) % z 
+    return ((a + z) % z) 
+  
+print(expoMod(x,y,z))
